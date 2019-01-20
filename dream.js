@@ -1,15 +1,22 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "+";
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Cyhper Bot Script By : DREAM`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : DREAM ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Spaming :>`,"http://twitch.tv/Dream")
-client.user.setStatus("#IT WORKS!!")
+
+
+
+
+client.login("NTI0OTYyMzIxMjUzMjY5NTQ0.DyXcMQ.MR6t9cC_PrSMI75Kt8sebtRq6xg");
+
+
+
+
+client.on('ready',  () => {
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
+  console.log('by BadGuY');
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log(`Logged in as  * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log('is online')
+client.user.setStatus("dnd");
 });
 
 
@@ -17,8 +24,37 @@ client.user.setStatus("#IT WORKS!!")
 
 
 
-
-
-
-
-client.login(""NTI0OTYyMzIxMjUzMjY5NTQ0.DyXcMQ.MR6t9cC_PrSMI75Kt8sebtRq6xg"");// لا تغير فيها شيء
+const devs = ["524962321253269544"];
+const adminprefix = ["!"];
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+      
+  if (message.content.startsWith('(prefix))ply')) {
+    client.user.setGame(argresult);
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+     if (message.content === ("leave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith('(prefix)wt')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith('mils')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith('(prefix)st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+      message.channel.send(`**✅**`)
+  }
+  if (message.content.startsWith('(prefix)setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith('(prefix)setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});
