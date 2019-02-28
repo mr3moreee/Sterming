@@ -1,7 +1,7 @@
 var id = '422729255827275776'
 var initcmd = '!'
-const developers = id
-const adminprefix = initcmd;
+const developers = '422729255827275776'
+const adminprefix = '!';
 client.on('message', message => {
     var argresult = message.content.split(' ').slice(2).join(" ")
       if (!developers.includes(message.author.id)) return;
