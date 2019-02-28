@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
 const aprefix ="!";
 const dev = ["422729255827275776"];
 
@@ -51,3 +53,5 @@ client.user.setStatus("offline")
     message.channel.send(`**تم تغير حالت البوت لي offline** `);
 }
 });
+
+client.login('NDIyNzI5MjU1ODI3Mjc1Nzc2.D1gg1w.hZxgucitIZbtQ-ajQaarvjom17A')
