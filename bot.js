@@ -1,4 +1,4 @@
-var id = '422729255827275776'
+var id = 'NDIyNzI5MjU1ODI3Mjc1Nzc2.D1gg1w.hZxgucitIZbtQ-ajQaarvjom17A'
 var initcmd = '-!'
 const developers = id
 const adminprefix = initcmd;
