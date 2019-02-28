@@ -1,37 +1,53 @@
-var id = '422729255827275776'
-var initcmd = '!'
-const developers = id
-const adminprefix = initcmd;
+const aprefix ="!";
+const dev = ["422729255827275776"];
+
 client.on('message', message => {
-    var argresult = message.content.split(' ').slice(2).join(" ")
-      if (!developers.includes(message.author.id)) return;
+    var arg = message.content.split(` `).slice(1).join(' ');
+      if (!dev.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'vip ply')) {
-    client.user.setGame(argresult);
-      message.channel.send("**:white_check_mark: | The Playing Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
+  if (message.content.startsWith(aprefix + 'setg')) { 
+    client.user.setGame(arg);
+      message.channel.send(`**✅   ${arg}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'wat')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send("**:white_check_mark: | The Watching Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
+  if (message.content.startsWith(aprefix + 'setw')) {
+  client.user.setActivity(arg, {type:'WATCHING'});
+      message.channel.send(`**✅   ${arg}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'lis')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send("**:white_check_mark: | The Listening Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
+  if (message.content.startsWith(aprefix + 'setl')) {
+  client.user.setActivity(arg , {type:'LISTENING'});
+      message.channel.send(`**✅   ${arg}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/fadi_games2");
-      message.channel.send("**:white_check_mark: | The Streaming Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
-  }
-  if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
+  if (message.content.startsWith(aprefix + 'stream')){
+    client.user.setGame(arg, "https://www.twitch.tv/bot");
+      message.channel.send(`**✅ ${arg} **`)
+  } else
+  if (message.content.startsWith(aprefix + 'setname')) { //لتغير اسم البوت 
+  client.user.setUsername(arg).then
+      message.channel.send(`Changing The Name To ..**${arg}** `)
 } else
-if (message.content.startsWith(adminprefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+
+if (message.content.startsWith(aprefix + 'setavatar')) { //لتغير صورة البوت 
+  client.user.setAvatar(arg);
+    message.channel.send(`تم تغير صورة البوت لي :**${arg}** `);
+} else
+
+if (message.content.startsWith(aprefix + 'setonline')) { //لتغير حالت البوت لي  online
+client.user.setStatus("online")
+    message.channel.send(`**تم تغير حالت البوت لي online** `);
+} else
+    
+if (message.content.startsWith(aprefix + 'setdnd')) { //~~~ dnd
+client.user.setStatus("dnd")
+    message.channel.send(`**تم تغير حالت البوت لي dnd** `);
+} else
+    
+if (message.content.startsWith(aprefix + 'setidle')) { //~~~ idle
+client.user.setStatus("idle")
+    message.channel.send(`**تم تغير حالت البوت لي idle** `);
+} else
+
+if (message.content.startsWith(aprefix + 'setoffline')) { //~~~ offline
+client.user.setStatus("offline")
+    message.channel.send(`**تم تغير حالت البوت لي offline** `);
 }
 });
