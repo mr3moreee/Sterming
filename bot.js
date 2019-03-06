@@ -54,25 +54,4 @@ client.user.setStatus("offline")
 }
 });
 
-client.on('message', message => {
-            if (message.content.startsWith(prefix + "help")) {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     **ply** ' ,' **Playing** ')
-.addField('     **wat**  ' ,' **Watching** ')
-.addField('     **lis** ' , '**Listening**') 
-.addField('     **str** ' , '**Streaming**') 
-.addField('     **name** ' ,' **Change Name**')
-.addField('     **ava** ' , '**Change Avatar**')
-.addField('     **on** ' ,' **Online** ')
-.addField('     **idle** ' ,' **Idle** ')
-.addField('     **dnd** ' ,' **Do Not Disturb** ')
-.addField('     **off** ' ,' **Offline** ')
-.setColor('#7d2dbe')
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
-
 client.login('NDIyNzI5MjU1ODI3Mjc1Nzc2.D1gg1w.hZxgucitIZbtQ-ajQaarvjom17A')
